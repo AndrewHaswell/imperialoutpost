@@ -11,15 +11,34 @@
 |
 */
 
-Route::get('my/page', function() {
+Route::get('my/page', function () {
   return 'Hello world!';
 });
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/books/{genre?}', function ($genre = 'Crime') {
+  return "Books in the {$genre} category.";
+});
+
+Route::get('/', function () {
+  return View::make('simple');
+});
+
+Route::get('/{squirrel}', function ($squirrel) {
+  $data['squirrel'] = $squirrel;
+  return View::make('simple', $data);
+});
+
+Route::get('first', function () {
+  return 'First route.';
+});
+
+Route::get('second', function () {
+  return 'Second route.';
+});
+
+// Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::controllers(['auth'     => 'Auth\AuthController',
+                    'password' => 'Auth\PasswordController',]);
