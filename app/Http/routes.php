@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('my/page', function() {
+  return 'Hello world!';
+});
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
