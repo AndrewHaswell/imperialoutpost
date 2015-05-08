@@ -11,15 +11,21 @@
 |
 */
 
-Route::get('my/page', function() {
+Route::get('my/page', function () {
   return 'Hello world!';
+});
+
+Route::get('/books', function () {
+  return 'Books index.';
+});
+
+Route::get('/books/{genre}', function ($genre) {
+  return 'Books in the ' . $genre . ' category.';
 });
 
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::controllers(['auth'     => 'Auth\AuthController',
+                    'password' => 'Auth\PasswordController',]);
