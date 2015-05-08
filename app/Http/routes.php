@@ -15,15 +15,15 @@ Route::get('my/page', function () {
   return 'Hello world!';
 });
 
-Route::get('/books', function () {
-  return 'Books index.';
+Route::get('/books/{genre?}', function ($genre = 'Crime') {
+  return "Books in the {$genre} category.";
 });
 
-Route::get('/books/{genre}', function ($genre) {
-  return 'Books in the ' . $genre . ' category.';
+Route::get('/', function () {
+  return View::make('simple');
 });
 
-Route::get('/', 'WelcomeController@index');
+// Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
