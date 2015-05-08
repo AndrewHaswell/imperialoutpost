@@ -23,6 +23,19 @@ Route::get('/', function () {
   return View::make('simple');
 });
 
+Route::get('/{squirrel}', function ($squirrel) {
+  $data['squirrel'] = $squirrel;
+  return View::make('simple', $data);
+});
+
+Route::get('first', function () {
+  return 'First route.';
+});
+
+Route::get('second', function () {
+  return 'Second route.';
+});
+
 // Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
