@@ -13,6 +13,8 @@ class ComicController extends Controller
     $this->get_strip('http://dilbert.com/', '//img[contains(@class,"img-comic")]/@src');
     $this->get_strip('http://www.penny-arcade.com/comic', '//div[@id="comicFrame"]/a/img/@src');
     $this->get_strip('http://pvponline.com/comic', '//section[@class="comic-art"]/img/@src');
+    $this->get_strip('https://garfield.com/', '//a[@id="home_comic"]/img/@src');
+    $this->get_strip('http://www.sheldoncomics.com/', '//img[@id="strip"]/@src');
   }
 
   /**
