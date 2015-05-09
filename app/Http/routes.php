@@ -19,9 +19,7 @@ Route::get('/books/{genre?}', function ($genre = 'Crime') {
   return "Books in the {$genre} category.";
 });
 
-Route::get('/', function () {
-  return View::make('simple');
-});
+Route::get('/', 'ComicController@index');
 
 Route::get('/{squirrel}', function ($squirrel) {
   $data['squirrel'] = $squirrel;
