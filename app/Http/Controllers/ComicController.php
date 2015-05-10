@@ -17,14 +17,7 @@ class ComicController extends Controller
     foreach ($strips as $strip) {
       $this->get_strip((string)$strip->title, (string)$strip->url, (string)$strip->xpath_query);
     }
-    $this->get_strip('PvP Online','http://pvponline.com/comic', '//section[@class="comic-art"]/img/@src');
     exit;
-    /**
-     * $this->get_strip('http://dilbert.com/', '//img[@class="img-comic"]/@src');
-     * $this->get_strip('http://www.penny-arcade.com/comic', '//div[@id="comicFrame"]/a/img/@src');
-     * $this->get_strip('http://pvponline.com/comic', '//section[@class="comic-art"]/img/@src');
-     * $this->get_strip('http://www.sheldoncomics.com/', '//img[@id="strip"]/@src');
-     */
   }
 
   /**
